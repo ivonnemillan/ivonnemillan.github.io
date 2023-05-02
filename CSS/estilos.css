@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Roboto+Slab:wght@500&family=Rubik+Pixels&display=swap');
+
+/*Pseudoclase llamada root*/
+:root{
+    --background-color: rgb(204, 194, 194);
+    --color-primario: rgb(182, 103, 116);
+    --colortext: orange;
+    --colorvermas: rgb(139, 106, 44);
+    --background-footer: rgb(95, 71, 27);
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Inspiration', cursive; 
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik Pixels', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.encabezado-1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.contenedor-uno{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*Modificando los elementos del header "h1,a"*/
+.contenedor-logo{
+    display: flex;
+    align-items: center;  
+    gap: 10rem; /*Espacio aplicado en filas y columnas*/ 
+}
+.contenedor-logo img{
+    width: 50px;
+}
+.contenedor h1{
+    color: coral;
+    font-size: 3rem;
+    text-transform: uppercase; /*Mayúsculas*/
+    letter-spacing: 5px;
+}
+
+/*Modificaciones del nav*/
+.contenedor-menu{
+    background-color: var(--background-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.menu{
+    display: flex; /*Establecemos a todo los elementos en una sola fila*/
+    gap: 2rem;
+}
+
+.menu li{
+    list-style: none; /*Quitamos las características que vienen por default*/
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--colortext);
+    font-weight: 600; /*Se remarque la letra*/
+    text-transform: uppercase;
+    position: relative; /*Va por encima de todo*/
+}
+
+.menu a::after{ /*Uso de "after"*/
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute; 
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+.menu a:hover{ /*Cambiar de color cuando pasemos el puntero*/
+    color: beige;
+}
+
+/*Modificaciones de la sección uno "banner"*/
+.banner{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00), url("../img/clothes.jpg");
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenido-banner{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.contenido-banner h2{
+    color: white;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/*Categorías*/
+.top-categories{
+    display: flex;
+    flex-direction: column; /*Distribuir todas por columnas*/
+    gap: 2rem;
+    margin-bottom: 3rem; /*Aplica un margen por debajo del elemento*/
+}
+
+.container-categories{
+    display: grid; /*rejillas (cuadriculado)*/
+    grid-template-columns: repeat(3,1fr); /*Mi zona bajo columnas- fr=fracción*/
+    gap: 3rem;
+}
+
+.card-category{
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Cada uno de los elementos forman parte de una sección*/
+    justify-content: center;
+    border-radius: 2rem; /*Recorta el borde de un elemento*/
+    gap: 2rem;
+}
+
+.category-prenda1{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(../img/shirt.jpg);
+    background-size: cover;
+    background-position: bottom; /*Posicionar la imágen de fondo con la dirección abajo*/
+    background-repeat: no-repeat; /*Si la imágen es muy grande, que no se repita*/
+}
+
+.category-prenda3{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(../img/jacket.jpg);
+    background-size: cover;
+    background-position: bottom; 
+    background-repeat: no-repeat;
+}
+
+.category-prenda2{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(../img/dress.jpg);
+    background-size: cover;
+    background-position: bottom; 
+    background-repeat: no-repeat;
+}
+
+.card-category p{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize; /*Solamente la primer letra en mayúscula*/
+    position: relative ; /*mdn web docs-página para investigar*/
+}
+
+.card-category p::after{
+    content: ''; /*Línea en blanco, tiene las propiedades de abajo*/
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.card-category span{
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer; /*Modificando al puntero del mouse*/
+}
+
+.card-category span:hover{
+    color: var(--colorvermas);
+}
+
+/*Empieza el footer*/
+
+.footer{
+    background-color: var(--background-footer);
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+}
+
+.menu-footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr) 30rem;
+    gap: 4rem;
+    justify-items: center;
+}
+
+.title-footer{
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

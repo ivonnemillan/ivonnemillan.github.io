@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Roboto+Slab:wght@500&family=Rubik+Pixels&display=swap');
+
+/*Pseudoclase llamada root*/
+:root{
+    --background-color: rgb(204, 194, 194);
+    --color-primario: rgb(182, 103, 116);
+    --colortext: orange;
+    --colorvermas: rgb(139, 106, 44);
+    --background-footer: rgb(95, 71, 27);
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Inspiration', cursive; 
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik Pixels', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.encabezado-1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.contenedor-uno{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*Modificando los elementos del header "h1,a"*/
+.contenedor-logo{
+    display: flex;
+    align-items: center;  
+    gap: 10rem; /*Espacio aplicado en filas y columnas*/ 
+}
+.contenedor-logo img{
+    width: 50px;
+}
+.contenedor h1{
+    color: coral;
+    font-size: 3rem;
+    text-transform: uppercase; /*Mayúsculas*/
+    letter-spacing: 5px;
+}
+
+/*Modificaciones del nav*/
+.contenedor-menu{
+    background-color: var(--background-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.menu{
+    display: flex; /*Establecemos a todo los elementos en una sola fila*/
+    gap: 2rem;
+}
+
+.menu li{
+    list-style: none; /*Quitamos las características que vienen por default*/
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 4rem;
+    color: var(--colortext);
+    font-weight: 600; /*Se remarque la letra*/
+    text-transform: uppercase;
+    position: relative; /*Va por encima de todo*/
+}
+
+.menu a::after{ /*Uso de "after"*/
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute; 
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+.menu a:hover{ /*Cambiar de color cuando pasemos el puntero*/
+    color: beige;
+}
+
+/*Modificaciones de la sección uno "banner"*/
+.banner{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00), url("https://img.freepik.com/foto-gratis/moda-rapida-vs-moda-lenta-sostenible_23-2149134026.jpg?w=1380&t=st=1682703060~exp=1682703660~hmac=5bdfbb17f76d6ffd09f3020bd578a3f47a7bf215a8dd06caf06b5df26b54386a");
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenido-banner{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.contenido-banner h2{
+    color: white;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/*Categorías*/
+.top-categories{
+    display: flex;
+    flex-direction: column; /*Distribuir todas por columnas*/
+    gap: 2rem;
+    margin-bottom: 3rem; /*Aplica un margen por debajo del elemento*/
+}
+
+.container-categories{
+    display: grid; /*rejillas (cuadriculado)*/
+    grid-template-columns: repeat(3,1fr); /*Mi zona bajo columnas- fr=fracción*/
+    gap: 3rem;
+}
+
+.card-category{
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Cada uno de los elementos forman parte de una sección*/
+    justify-content: center;
+    border-radius: 2rem; /*Recorta el borde de un elemento*/
+    gap: 2rem;
+}
+
+.category-prenda1{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/2fdbd7ab-f378-4c63-8b21-c944ad2633fd/header_t-shirts2.jpg);
+    background-size: cover;
+    background-position: bottom; /*Posicionar la imágen de fondo con la dirección abajo*/
+    background-repeat: no-repeat; /*Si la imágen es muy grande, que no se repita*/
+}
+
+.category-prenda3{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(https://cdn.shopify.com/s/files/1/0095/9954/9540/products/Artboard5_8fe93ebe-f4aa-4efc-8544-dba6b0c07cfd_600x.png?v=1679535772);
+    background-size: cover;
+    background-position: bottom; 
+    background-repeat: no-repeat;
+}
+
+.category-prenda2{
+    background-image: linear-gradient(100deg, rgb(216, 181, 143), #ffffff00) ,url(https://images.stockx.com/images/Jordan-x-J-Balvin-Varsity-Jacket-White-Blue.jpg?fit=fill&bg=FFFFFF&w=480&h=320&fm=webp&auto=compress&dpr=2&trim=color&updated_at=1663008022&q=75);
+    background-size: cover;
+    background-position: bottom; 
+    background-repeat: no-repeat;
+}
+
+.card-category p{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize; /*Solamente la primer letra en mayúscula*/
+    position: relative ; /*mdn web docs-página para investigar*/
+}
+
+.card-category p::after{
+    content: ''; /*Línea en blanco, tiene las propiedades de abajo*/
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.card-category span{
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer; /*Modificando al puntero del mouse*/
+}
+
+.card-category span:hover{
+    color: var(--colorvermas);
+}
+
+/*Empieza el footer*/
+
+.footer{
+    background-color: var(--background-footer);
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+}
+
+.menu-footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr) 30rem;
+    gap: 4rem;
+    justify-items: center;
+}
+
+.title-footer{
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.social-icons{
+  display: flex;
+}
+.social-icons img{
+  padding:1rem;
+  width: 30px;
+  height: 30px;
+}
+
+/*Generando los estilos para la galería*/
+.titulo{
+    text-align: center;
+    font-weight: 300;
+    margin: 20px 0; /*margen arriba y abajo y hacia los lados*/
+    font-size: 80px;
+}
+
+.contenedor-galeria{
+    display: flex;
+    justify-content: space-evenly; /*los elementos se acomodarán de inicio a fin ocupando todo el espacio*/
+    flex-wrap: wrap; /*rompe con la alineación*/
+}
+
+.caja-galeria{
+    width: 28%;
+    height: 250px;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /*todo lo que salga de la caja se oculta*/
+}
+
+.caja-galeria:hover .caja-hover{
+    transform: translate(0); /*regresa a su posición original*/
+}
+
+.caja-hover{
+    transform: translate(100%,100%); /*se traslada en x, y. Un ancho y un alto del 100%*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #912b2b7e; /*color de fondo con transparencia*/
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s;
+}
+
+.caja-galeria img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Programar los media query (comportamientos de los elementos cuando la condición se cumple (tamaño de la pantalla (letra,tamaño, posición, etc)))*/
+
+@media screen and (max-width:900px){
+    .caja-galeria{
+        width: 45%;
+    }
+    .caja-hover{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .caja-galeria{
+        width: 90%;
+    }
+    .caja-hover{
+        font-size: 18px;
+    }
+}
